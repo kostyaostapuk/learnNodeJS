@@ -6,16 +6,15 @@ var app=express();
 
 //Determine the handler for the route
 app.get("/",function(request,response){
-
-   //Send answer
-   response.send("<h2>Привет Express!</h2>");
+      //send answer
+      response.send("<h2>Привет Express!</h2>");
 });
 app.get("/about",function(request,response){
-
-   response.send("<h1>О сайте</h1>");
+      response.send("<h2>О сайте</h2>");
 });
-app.get("/contact", function(request, response){
+app.use("/user",function(request,response,next){
+   console.log("Route /");
+   response.send("Hello");
 
-    response.send("<h1>Контакты</h1>");
 });
-app.listen(3000);
+app.listen(3007);

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <br>
+    <h3>Name:{{name}}</h3>
+    <h3>Surname:{{surname}}</h3>
+    <p>Numbers:
+      {{#if numberVisible}}
+         <ul>
+            {{#each number}}
+               <li>{{this}}</li>
+            {{/each}}
+         </ul>
+      {{/if}}
+
+   </p>
+</body>
+<html>

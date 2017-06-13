@@ -8,7 +8,8 @@ var app=express();
 //Determine the handler for the route
 app.use(function(request,response,next){
 
-   console.log("Middleware 1");
+   var data=new Date().getDate();
+   fs.appendFile("server.log",data);
    next();
 });
 app.use(function(request,response,next){

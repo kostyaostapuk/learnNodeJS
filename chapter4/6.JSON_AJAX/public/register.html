@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Регистрация</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+   </head>
+   <body>
+      <div class="container">
+         <div class="col-md-6">
+            <h1>Введите данные</h1>
+
+            <form class="" action="/register" method="post" name="registerForm">
+               <label>Имя</label><br>
+               <input class="form-control" type="text" name="userName"><br>
+               <label>Имя</label><br>
+               <input class="form-control" type="number" name="userAge"><br>
+               <input type="submit" name="" value="Отправить">
+            </form>
+         </div>
+      </div>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript">
+         $("form").submit(function(e){
+            e.preventDefault();
+            var registerForm=document.forms["registerForm"];
+            var userName=registerForm.elements["userName"].value;
+            var userAge=registerForm.elements["userAge"].value;
+
+            $.ajax({
+               type: "POST",
+               url: "/user",
+               data: JSON.stringify({userName:userName,userAge:userAge}),
+               dataType:"json",
+               contentType: "application/json",
+               success: function(data){
+                  console.log(data);
+               },
+            });
+         });
+      </script>
+
+
+   </body>
+</html>
