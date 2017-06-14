@@ -1,5 +1,5 @@
 {
-  "name": "json_ajax",
+  "name": "webapp",
   "version": "1.0.0",
   "dependencies": {
     "body-parser": "^1.17.2",
